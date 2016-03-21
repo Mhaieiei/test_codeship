@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "./node_modules/.bin/mocha \"test/**/*.js\" --reporter spec"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -20,21 +19,15 @@
     "handlebars": "^4.0.5",
     "install": "^0.4.4",
     "jade": "~1.11.0",
-    "kerberos": "0.0.18",
     "method-override": "~1.0.0",
     "mongoose": "4.3.7",
     "morgan": "~1.6.1",
-    "nodemon": "^1.8.1",
-    "npm": "^3.7.3",
+    "nodemon": "^1.8.1",    
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
     "rootpath": "^0.1.2",
     "serve-favicon": "~2.3.0",
     "xml2js": "^0.4.16",
     "async" : "1.5.2"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
   }
 }
