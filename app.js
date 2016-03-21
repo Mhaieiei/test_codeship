@@ -42,7 +42,7 @@ module.exports = function(database) {
   app.use(morgan('dev')); // log every request to the console
   app.use(cookieParser()); // read cookies (needed for auth)
 
-  app.use(bodyParser());
+  // app.use(bodyParser());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 

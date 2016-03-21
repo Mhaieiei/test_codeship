@@ -10,13 +10,20 @@ To use this file, please make sure to
 //'mongodb://localhost:27017/nodewebapp'
 
 /* Required parameters */
-var host = 'localhost';
-var port = '27017';
-var database = 'nodewebapp';
+// var host = 'localhost';
+// var port = '27017';
+// var database = 'nodewebapp';
+
+// /* Optional parameters */
+// var username = '';
+// var password = '';
+var host = 'ds047930.mlab.com';
+var port = '47930';
+var database = 'heroku_nq1t7qwq';
 
 /* Optional parameters */
-var username = '';
-var password = '';
+var username = 'heroku_nq1t7qwq';
+var password = '22on1h03aj3m5tdmfmi5ruao61';
 
 /* -------------------------- */
 exports.host = host;
