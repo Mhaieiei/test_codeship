@@ -8,15 +8,16 @@ To use this file, please make sure to
 */
 
 //'mongodb://localhost:27017/nodewebapp'
+//mongodb://<dbuser>:<dbpassword>@ds025409.mlab.com:25409/monkeynode
 
 /* Required parameters */
-var host = 'localhost';
-var port = '27017';
-var database = 'nodewebapp';
+var host = 'ds025409.mlab.com';
+var port = '25409';
+var database = 'monkeynode';
 
 /* Optional parameters */
-var username = '';
-var password = '';
+var username = 'Mhai_eiei';
+var password = 'mhai2537';
 
 /* -------------------------- */
 exports.host = host;
