@@ -142,52 +142,60 @@ module.exports = function(app, passport) {
     // =====================================
        app.get('/home', isLoggedIn, function(req, res) {
        	
-       	var query = Doc.findByUser(req.user);
-       	var date= [];
-       	query.exec(function(err,_docs) {
-       		if(err) {
-       			console.log(err);
-       			res.status(500);
-       			return next(err);
-       		}
+        var query = Doc.findByUser(req.user);
+        var date= [];
+        query.exec(function(err,_docs) {
+          if(err) {
+            console.log(err);
+            res.status(500);
+            return next(err);
 
-       	
-	       		
-	       		for(var i = 0 ; i < _docs.length ;++i){
-	       			var a = _docs[i].dateCreate;
-	       			var yy = a.getFullYear();
-	       			var mm = a.getMonth()+1;
-	       			var dd = a.getDate();
-	       			
-	       			if(mm<10){
-	       				mm = "0"+mm;
-	       			}
-	       			if(dd<10){
-	       				dd = "0"+dd;
-	       			}
-	       			
-	       			date[i] = dd+ '/' +mm +'/'+ yy;
-	       		}
-	       		
-	       		//response.docs[0].dateCreate =  a.getYear() + '/' +a.getMonth() +'/'+a.getDay()
-	       		
-	       		console.log("update")
-	       		res.render('home.hbs',{
-					layout: 'homepage',
-	       			docs: _docs,
-              role: req.user.local.role,
-	       		  helpers: {
-	                getdate: function (value) { return date[value]; }
-		            }
-				});
-	       		
-				
-       		
-       			
-       		
-       		
-       	});
+          }
 
+          var response = {
+            layout: 'homePage',
+            docs: _docs,
+            helpers: {
+                  getdate: function (value) { return date[value]; }
+                }
+            
+          }
+            
+              
+            
+            for(var i = 0 ; i < _docs.length ;++i){
+              var a = _docs[i].dateCreate;
+              var yy = a.getFullYear();
+              var mm = a.getMonth()+1;
+              var dd = a.getDate();
+              
+              if(mm<10){
+                mm = "0"+mm;
+              }
+              if(dd<10){
+                dd = "0"+dd;
+              }
+              
+              date[i] = dd+ '/' +mm +'/'+ yy;
+            }
+            
+            //response.docs[0].dateCreate =  a.getYear() + '/' +a.getMonth() +'/'+a.getDay()
+            
+            console.log("update")
+            res.render('home.hbs',{
+          layout: 'homePage',
+              docs: _docs,
+                helpers: {
+                  getdate: function (value) { return date[value]; }
+                }
+        });
+            
+        
+          
+            
+          
+          
+        });
 
         
 
