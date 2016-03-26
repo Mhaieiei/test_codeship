@@ -15,8 +15,8 @@ var port = '25409';
 var database = 'monkeynode';
 
 /* Optional parameters */
-var username = 'Mhai_eiei';
-var password = 'mhai2537';
+var username = 'monkeyadmin';
+var password = 'monkeyoffice';
 
 /* -------------------------- */
 exports.host = host;
